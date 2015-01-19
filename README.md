@@ -1,3 +1,9 @@
+## Plotz
+
+Open plotz.R
+Read comments
+Have fun 
+
 ## Introduction
 
 This assignment uses data from
