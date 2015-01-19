@@ -1,6 +1,5 @@
-# Unable to get the dates to filter correctly :#
 # First download and unzip https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip
-# Read table data
+# Read table data from local setwd
 epc <- read.table('household_power_consumption.txt', header=TRUE, sep=';', na.strings='?')
 
 #Subset and filter correct date range
@@ -15,14 +14,17 @@ datetime <- as.POSIXct(strptime(paste(subsetted$Date, subsetted$Time), '%d/%m/%Y
 #subsetted <- filter(epc, DateTime >= as.Date("2007-02-01"), DateTime <= as.Date("2007-02-02"))
 #subsetted$datetime <- as.POSIXct(paste(epc, subsetted$Time))
 
-# Open png device and change plot name for new plots below
+# Open png device and change plot number based on the new plots below.
 png(filename='plot4.png')
 
 # the visualizations in order 1-4
+
 # plot1.png
 # hist(as.numeric(subsetted$Global_active_power), main='Global Active Power', xlab='Global Active Power (kilowatts)', col='red')
+
 # plot2.png epc$Global_active_power, 
 # plot(datetime, subsetted$Global_active_power, ylab='Global Active Power (kilowatts)', xlab='', type='l')
+
 # plot3.png
 # plot(datetime, subsetted$Sub_metering_1, type='l', xlab='', ylab='Energy sub metering')
 # lines(datetime, subsetted$Sub_metering_2, col='red')
